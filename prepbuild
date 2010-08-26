@@ -1,0 +1,69 @@
+#!/bin/bash
+
+SOURCE=$(pwd)
+DELETE=false
+CLEAN=false
+IPORT=true
+DEBUG=false
+RELEASE=false
+
+DIRECTORY=build
+
+while getopts "ht:fcnD:dr" flag
+do
+	case "$flag" in
+	f)
+ 		DELETE=true
+	;;
+	D)
+ 		DIRECTORY=$OPTARG
+	;;
+	d)
+		DEBUG=true
+	;;
+	r)
+		RELEASE=true
+	;;
+	n)
+ 		IPORT=false
+	;;
+	c)
+		CLEAN=true
+	;;
+	h)
+		echo "usage: $0 [-t (r|d|b)] [-f] [-n] [-d directory] [-c] [-h]"
+		exit 0
+	;;
+	esac
+done
+
+if $DELETE
+then
+	rm -r $DIRECTORY
+fi
+
+
+if $RELEASE
+then
+	mkdir -p $DIRECTORY/Release
+	if $IPORT
+	then
+		pushd $DIRECTORY/Release
+		cmake -DCAKE_BUILD_TYPE=Release $SOURCE
+		popd
+	fi
+fi
+
+if $DEBUG
+then
+	mkdir -p $DIRECTORY/Debug
+	if $IPORT
+	then
+		pushd $DIRECTORY/Debug
+		cmake -DCAKE_BUILD_TYPE=Debug $SOURCE
+		popd
+	fi
+fi
+
+
+

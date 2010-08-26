@@ -1,0 +1,86 @@
+output besser (funktion mit , und so ) (evtl mit printer klasse)
+makefile mit libs und subdirectories schoner machen
+konstanten (PI, e, ...)
+function initializer
+var auflistung
+func auflistung
+gui,
+commands
+include für files
+file support besser
+excpetions
+conditional, loop, bool, etc
+driver api besser machen
+unit tests
+system tests
+bessere clients
+const und var unterscheidung
+visitor?
+
+
+
+
+Interpreter:
+           erstellt ein tree.
+ Scanner --------------------------> expression
+ Parser                         expression   expression 
+                                     
+  | term/resultat                     | funktionen
+  v            set var/func           | variablen
+ Driver --------------------------> Context
+      \                               
+  |      \
+  |        \
+terminput   \> resultat
+setvar     
+setfunc
+
+
+cutsom functions:
+
+func1(A,B,C)=A+B+C
+func1: name
+A:par1
+B:par2
+C:par3
+A+B+C:expr
+
+     function <>-------functionexpr
+            
+    /         \
+   /           \
+customfunc    cfunc
+
+für eval von expr brauchts local context
+
+local context wird bei eval von func1 gesetzt und hat die A, B, C als von aufrufparameter als vars gespeichert
+
+dafür braucht context einen parent den er bei nichtfinden aufrufen kann...
+global context hat keinen parent
+
+
+
+neu:
+
+
+
+         term>
+Driver <========> interpreter
+       <command
+
+         command>
+Driver <========> history
+        <command
+
+        func/var>
+Driver <========> context
+        <func/var
+
+
+Command:
+calc
+listvars/funcs
+add/set/remove var/func
+
+commmand:
+execute, undo, redo

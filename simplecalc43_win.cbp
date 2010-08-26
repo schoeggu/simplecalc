@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="simplecalc43" />
+		<Option makefile_is_custom="1" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Generated Headers\;Generated Headers\src\interpreter\;Generated Headers\src\;Generated Sources\src\interpreter\;" />
+		<Build>
+			<Target title="all">
+				<Option type="4" />
+				<Option compiler="gcc" />
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile all" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option type="4" />
+				<Option compiler="gcc" />
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile rebuild_cache" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="utils">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\util\libutils.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output=".\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile utils" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="utils/fast">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\util\libutils.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output=".\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile utils/fast" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/util/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="interpreter">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter\libinterpreter.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+				<Option object_output=".\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\interpreter" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile interpreter" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="interpreter/fast">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter\libinterpreter.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+				<Option object_output=".\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\interpreter" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile interpreter/fast" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/interpreter/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="calc">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\apps\calc.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+				<Option object_output=".\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="--interactive " />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\include" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\apps" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile calc" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="calc/fast">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\apps\calc.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+				<Option object_output=".\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="--interactive " />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\include" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\apps" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile calc/fast" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="eq">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\apps\eq.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="D:\Projects\cmake\simplecalc_git\win_build\src\apps" />
+				<Option object_output=".\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\include" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\apps" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile eq" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+				</MakeCommands>
+			</Target>
+			<Target title="eq/fast">
+				<Option output="D:\Projects\cmake\simplecalc_git\win_build\src\apps\eq.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+				<Option object_output=".\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\interpreter" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\util" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\include" />
+					<Add directory="D:\Projects\cmake\simplecalc_git\src\apps" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile eq/fast" />
+					<CompileFile command='C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile &quot;$file&quot;' />
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f D:/Projects/cmake/simplecalc_git/win_build/src/apps/Makefile clean" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="CMakeLists.txt" />
+		<Unit filename="CMake\FindParsers.cmake">
+			<Option target="all" />
+			<Option target="rebuild_cache" />
+			<Option target="interpreter" />
+			<Option target="calc" />
+			<Option target="eq" />
+		</Unit>
+		<Unit filename="src\CMakeLists.txt" />
+		<Unit filename="src\apps\CMakeLists.txt" />
+		<Unit filename="src\apps\calc.cpp" />
+		<Unit filename="src\apps\eq.cpp" />
+		<Unit filename="src\interpreter\CMakeLists.txt" />
+		<Unit filename="src\interpreter\basicexpr.cpp" />
+		<Unit filename="src\interpreter\basicexpr.h" />
+		<Unit filename="src\interpreter\cfunction.cpp" />
+		<Unit filename="src\interpreter\cfunction.h" />
+		<Unit filename="src\interpreter\context.cpp" />
+		<Unit filename="src\interpreter\context.h" />
+		<Unit filename="src\interpreter\customfunction.cpp" />
+		<Unit filename="src\interpreter\customfunction.h" />
+		<Unit filename="src\interpreter\driver.cpp" />
+		<Unit filename="src\interpreter\driver.h" />
+		<Unit filename="src\interpreter\expression.cpp" />
+		<Unit filename="src\interpreter\expression.h" />
+		<Unit filename="src\interpreter\function.cpp" />
+		<Unit filename="src\interpreter\function.h" />
+		<Unit filename="src\interpreter\functionexpr.cpp" />
+		<Unit filename="src\interpreter\functionexpr.h" />
+		<Unit filename="src\interpreter\parenthesisexpr.cpp" />
+		<Unit filename="src\interpreter\parenthesisexpr.h" />
+		<Unit filename="src\interpreter\parser.yy" />
+		<Unit filename="src\interpreter\scanner.ll" />
+		<Unit filename="src\interpreter\terminalexpr.cpp" />
+		<Unit filename="src\interpreter\terminalexpr.h" />
+		<Unit filename="src\interpreter\terminterpreter.h" />
+		<Unit filename="src\interpreter\variableexpr.cpp" />
+		<Unit filename="src\interpreter\variableexpr.h" />
+		<Unit filename="src\util\CMakeLists.txt" />
+		<Unit filename="src\util\util.cpp" />
+		<Unit filename="src\util\util.h" />
+		<Unit filename="win_build\src\interpreter\location.hh">
+			<Option virtualFolder="Generated Headers\src\interpreter\" />
+		</Unit>
+		<Unit filename="win_build\src\interpreter\parser.cpp">
+			<Option virtualFolder="Generated Sources\src\interpreter\" />
+		</Unit>
+		<Unit filename="win_build\src\interpreter\parser.hpp">
+			<Option virtualFolder="Generated Headers\src\interpreter\" />
+		</Unit>
+		<Unit filename="win_build\src\interpreter\position.hh">
+			<Option virtualFolder="Generated Headers\src\interpreter\" />
+		</Unit>
+		<Unit filename="win_build\src\interpreter\scanner.cpp">
+			<Option virtualFolder="Generated Sources\src\interpreter\" />
+		</Unit>
+		<Unit filename="win_build\src\interpreter\stack.hh">
+			<Option virtualFolder="Generated Headers\src\interpreter\" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

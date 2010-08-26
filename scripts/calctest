@@ -1,0 +1,7 @@
+fun1(t1,t2,t3,t4)=t1/t2+t3/t4
+mrand(10,20)
+mrand(10,20)
+mrand(15,20)
+fun1(8,2,9,3)
+A=fun1(1,2,3,4)
+fun1(A,A*2,A*3,A*4)

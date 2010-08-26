@@ -1,0 +1,69 @@
+BIN = test
+LIB = libterminterpreter.so
+LIB_NAME = libterminterpreter
+LIB_SRC = parser.cpp \
+	      scanner.cpp \
+    	  context.cpp \
+    	  expression.cpp \
+    	  basicexpr.cpp \
+    	  terminalexpr.cpp \
+    	  functionexpr.cpp \
+    	  customfunction.cpp \
+    	  cfunction.cpp \
+    	  variableexpr.cpp \
+    	  parenthesisexpr.cpp \
+    	  driver.cpp
+
+GENFILES = parser.cpp \
+		   scanner.cpp \
+		   scanner.hpp \
+		   parser.hpp \
+		   stack.hh \
+		   location.hh \
+		   position.hh \
+		   parser.output
+
+BIN_SRC = test.cpp
+LIB_OBJ = $(LIB_SRC:%.cpp=%.o)
+BIN_OBJ = $(BIN_SRC:%.cpp=%.o) 
+OBJ = $(LIB_OBJ) $(BIN_OBJ) 
+
+CC = g++
+LEX = flex
+YACC = bison
+
+CPPFLAGS += -Wall 
+CPPFLAGS += -ggdb
+CPPFLAGS += -fPIC
+LDFLAGS += -lm
+YYFLAGS += -d
+
+all : bin
+bin : $(BIN)
+lib : $(LIB)
+
+$(BIN)  : $(LIB) $(BIN_OBJ)
+	$(CC) $(LDFLAGS) -o $@ $
+
+
+$(LIB) : $(LIB_OBJ)
+	$(CC) -shared -Wl,-soname,$(LIB_NAME).so.1 -o $@ $
+	ln -fs $@ $@.1
+
+%.cpp : %.ll 
+	$(LEX) --header-file=$(@:%.cpp=%.hpp) -o $@ $<
+
+%.cpp : %.yy
+	$(YACC) $(YYFLAGS) -o $@ $
+
+%.o : %.cpp
+	$(CC) $(CPPFLAGS) -c $< 
+
+genfiles: $(GENFILES)
+
+
+
+
+.PHONY : clean all genfiles
+clean :	
+	rm -rf $(BIN) $(LIB) $(LIB).1 $(OBJ) $(GENFILES)

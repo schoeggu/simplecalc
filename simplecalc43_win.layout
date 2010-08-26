@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="calc" />
+	<File name="CMakeLists.txt" open="1" top="0" tabpos="2">
+		<Cursor position="765" topLine="0" />
+	</File>
+	<File name="CMake\FindParsers.cmake" open="1" top="0" tabpos="4">
+		<Cursor position="4176" topLine="67" />
+	</File>
+	<File name="src\interpreter\driver.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="1606" topLine="3" />
+	</File>
+	<File name="src\interpreter\scanner.ll" open="1" top="0" tabpos="3">
+		<Cursor position="403" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
