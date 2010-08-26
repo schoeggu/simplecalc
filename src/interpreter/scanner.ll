@@ -29,8 +29,7 @@ gleich		\=
 colon       :
 semicolon   ;
 hoch		\^
-assign      {colon}{gleich}
-operator	{opplus}|{opminus}|{opmult}|{opdiv}|{klammauf}|{klammzu}|{gleich}|{opcomma}|{colon}|{semicolon}|{hoch}|{assign}|\n
+operator	{opplus}|{opminus}|{opmult}|{opdiv}|{klammauf}|{klammzu}|{gleich}|{opcomma}|{colon}|{semicolon}|{hoch}|\n
 
 %{
 #define YY_USER_ACTION  yylloc->columns (yyleng);
