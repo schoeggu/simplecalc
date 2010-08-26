@@ -7,7 +7,7 @@
 
 using namespace std;
 using namespace TermInterpreter;
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
 	Context* c = new Context;
 	c->addFunction("sqrt", new CFunction(1, &sqrt, "square root"));

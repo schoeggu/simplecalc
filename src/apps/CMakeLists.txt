@@ -6,14 +6,12 @@ ${INCLUDE_DIR}
 ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-ADD_EXECUTABLE (calc calc.cpp) 
-ADD_EXECUTABLE (eq eq.cpp) 
+ADD_EXECUTABLE (calc calc.cpp)
+ADD_EXECUTABLE (eq eq.cpp)
 
 TARGET_LINK_LIBRARIES(calc interpreter)
 TARGET_LINK_LIBRARIES(eq interpreter)
 
 TARGET_LINK_LIBRARIES(calc m)
 TARGET_LINK_LIBRARIES(eq m)
-
-
 

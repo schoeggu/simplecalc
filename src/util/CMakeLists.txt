@@ -3,10 +3,9 @@ INCLUDE_DIRECTORIES(
 )
 
 ADD_LIBRARY(
-	utils 
+	utils
 	STATIC
 
 	util.cpp
 )
-		
 

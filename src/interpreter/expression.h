@@ -10,11 +10,11 @@ namespace TermInterpreter
 class Context;
 class Expression
 {
-public: 
+public:
 	Expression(){}
 	virtual ~Expression(){}
-	
-	virtual double evaluate(Context&) const = 0;
+
+	virtual double evaluate(const Context&) const = 0;
 
 	virtual string toString() const = 0;
 
