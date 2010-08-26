@@ -3,7 +3,6 @@
 
 
 #include <string>
-#include <float.h>
 using std::string;
 
 namespace yy
@@ -46,8 +45,6 @@ namespace TermInterpreter
 	//	bool removeCommand(string command);
 
 		void result(Expression*);
-		Expression* getExpression() { return m_result; }
-		double getResult() { return m_result ? m_result->evaluate(*m_globalContext) : DBL_MAX; }
 
 		void error(const yy::location&, const string&);
 		void error(const string&);

@@ -3,7 +3,7 @@
 
 #include "expression.h"
 
-namespace TermInterpreter 
+namespace TermInterpreter
 {
 
 class Context;
@@ -16,13 +16,13 @@ enum OpType {
 	POWER
 };
 
-class BasicExpr : public Expression 
+class BasicExpr : public Expression
 {
-public: 
+public:
 	BasicExpr(Expression*, Expression*, OpType t);
 	virtual ~BasicExpr();
 
-	virtual double evaluate(Context&) const;
+	virtual double evaluate(const Context&) const;
 	virtual string toString() const;
 private:
 	static double add(double op1, double op2);
@@ -36,8 +36,8 @@ private:
 	OpType m_type;
 	char m_op; /* just for printings sake */
 	double (*m_function)(double, double);
-}; 
+};
 
 } // namespace
 
-#endif 
+#endif

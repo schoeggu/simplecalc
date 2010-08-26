@@ -20,7 +20,7 @@ namespace TermInterpreter
 	CFunction::~CFunction()
 	{ }
 
-	double CFunction::call(vector<Expression*>* args, Context& globalContext) const
+	double CFunction::call(vector<Expression*>* args, const Context& globalContext) const
 	{
 		if (args) {
 			if (args->size() != (unsigned int)m_numParams) {cerr << "ERROR: #cfunction.cpp:22" << endl;return 0; }//TODO error

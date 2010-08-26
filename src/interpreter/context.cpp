@@ -4,13 +4,14 @@
 #include "function.h"
 #include "cfunction.h"
 #include <iostream>
+#include <float.h>
 
 namespace TermInterpreter
 {
 	double dummy() { return 0; }
 
-	Context::Context(bool dontdelete) : m_parent(NULL), m_bDontDelete(dontdelete) {}
-	Context::Context(const Context* parent, bool dontdelete) : m_parent(parent), m_bDontDelete(dontdelete) {}
+	Context::Context(bool dontdelete) : m_parent(NULL), m_bDontDelete(dontdelete), m_result(new TerminalExpr(0)), m_lastResult(new TerminalExpr(0)), m_bResultChanged(false) {}
+	Context::Context(const Context* parent, bool dontdelete) : m_parent(parent), m_bDontDelete(dontdelete), m_result(NULL), m_lastResult(NULL), m_bResultChanged(false) {}
 
 	Context::~Context()
 	{
@@ -78,5 +79,31 @@ namespace TermInterpreter
 			return f; //TODO throw exception
 		}
 	}
+
+	void Context::setResult(Expression* res)
+	{
+        delete m_lastResult;
+        m_lastResult = m_result;
+        m_result = res;
+        setVar("RES", m_lastResult->evaluate(*this));
+        m_bResultChanged = true;
+	}
+
+    double Context::getResult() const
+    {
+        return m_result ? m_result->evaluate(*this) : DBL_MAX;
+    }
+
+    const Expression* Context::getResultExpression() const
+    {
+        return m_result;
+    }
+
+    bool Context::hasResultChanged()
+    {
+        bool tmp = m_bResultChanged;
+        m_bResultChanged = false;
+        return tmp;
+    }
 
 } // TermInterpreter

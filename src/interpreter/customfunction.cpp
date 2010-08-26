@@ -52,7 +52,7 @@ namespace TermInterpreter
 		delete m_func;
 	}
 
-	double CustomFunction::call(vector<Expression*>* args, Context& globalContext) const
+	double CustomFunction::call(vector<Expression*>* args, const Context& globalContext) const
 	{
 		Context localContext(&globalContext, true);
 		vector<string>::const_iterator name;

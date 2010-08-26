@@ -12,7 +12,7 @@ BasicExpr::BasicExpr(Expression* op1, Expression* op2, OpType t)
 	switch (m_type)
 	{
 		case ADD:
-			m_function = (&add);	
+			m_function = (&add);
 			m_op = '+';
 			break;
 		case SUBTRACT:
@@ -43,7 +43,7 @@ BasicExpr::~BasicExpr()
 	delete m_op2;
 }
 
-double BasicExpr::evaluate(Context& cont) const
+double BasicExpr::evaluate(const Context& cont) const
 {
 
 	return (*m_function)(m_op1->evaluate(cont), m_op2->evaluate(cont));

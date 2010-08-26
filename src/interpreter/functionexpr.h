@@ -1,5 +1,5 @@
 #ifndef FUNCTIONEXPR_H
-#define FUNCTIONEXPR_H 
+#define FUNCTIONEXPR_H
 
 #include <string>
 #include <vector>
@@ -13,19 +13,19 @@ namespace TermInterpreter
 {
 
 	class Context;
-	
-	
-	class FunctionExpr : public Expression 
+
+
+	class FunctionExpr : public Expression
 	{
-	public: 
+	public:
 		FunctionExpr(string name, vector<Expression*>* parList);
 		FunctionExpr(string name, Expression* param);
 		virtual ~FunctionExpr();
-	
-		virtual double evaluate(Context&) const;
+
+		virtual double evaluate(const Context&) const;
 		virtual string toString() const;
 	private:
-	
+
 		string m_name;
 		int m_numParams;
 		vector<Expression*>* m_params;
@@ -34,4 +34,4 @@ namespace TermInterpreter
 
 } // namespace
 
-#endif 
+#endif

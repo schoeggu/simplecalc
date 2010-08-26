@@ -31,6 +31,10 @@ public:
 
 	void setDontDelete(bool b = true) { m_bDontDelete = b; }
 
+    void setResult(Expression* res);
+    double getResult() const;
+    const Expression* getResultExpression() const;
+    bool hasResultChanged();
 
 	bool addFunction(string, Function*);
 	const Function* lookupFunction(string) const;
@@ -40,6 +44,9 @@ private:
 	map<string, Expression*> m_Vars;
 	const Context* m_parent;
 	bool m_bDontDelete;
+	Expression* m_result;
+	Expression* m_lastResult;
+	bool m_bResultChanged;
 };
 
 } // namespace

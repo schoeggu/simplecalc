@@ -13,7 +13,7 @@ namespace TermInterpreter
 		delete m_par;
 	}
 
-	double ParenthesisExpr::evaluate(Context& cont) const
+	double ParenthesisExpr::evaluate(const Context& cont) const
 	{
 		return m_par->evaluate(cont) * (m_negative ? -1 : 1);
 	}
@@ -22,7 +22,7 @@ namespace TermInterpreter
 	{
 		string str;
 	   	str += m_negative ? "-" : "";
-		str += "( "; 
+		str += "( ";
 		str += m_par->toString();
 		str += " )";
 

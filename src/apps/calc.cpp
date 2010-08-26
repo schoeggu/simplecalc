@@ -25,7 +25,7 @@ double testfun(double t1, double t2, double t3) {
 	return t1*t2/t3;
 }
 
-void doCalculations(Driver* d, istream& stream);
+void doCalculations(Driver* d, Context* c, istream& stream);
 void initContext(Context* c);
 void printHelp(char* prname);
 
@@ -72,16 +72,16 @@ int main(int argc, char** argv)
 
 	if (init) {
 		ifstream file(initfile.c_str(), ifstream::in);
-		doCalculations(&d, file);
+		doCalculations(&d, c, file);
 		file.close();
 	}
 
 	if (!interactive) {
 		ifstream file(filename.c_str(), ifstream::in);
-		doCalculations(&d, file);
+		doCalculations(&d, c, file);
 		file.close();
 	} else {
-		doCalculations(&d, cin);
+		doCalculations(&d, c, cin);
 	}
 
 	delete c;
@@ -90,7 +90,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-void doCalculations(Driver* d, istream& stream)
+void doCalculations(Driver* d, Context* c, istream& stream)
 {
 	string line;
 	char* pc = new char[99];
@@ -98,12 +98,9 @@ void doCalculations(Driver* d, istream& stream)
 	line = pc;
 	while (stream.good() && line != "q" && line != "quit") {
 		d->parse(line);
-
-		if (d->getResult() != DBL_MAX) {
-			cout << d->getExpression()->toString() << " = " << d->getResult() << endl;
-			d->setVar("RES", d->getExpression(), false);
+		if (c->hasResultChanged() && c->getResult() != DBL_MAX) {
+			cout << c->getResultExpression()->toString() << " = " << c->getResult() << endl;
 		}
-
 		stream.getline(pc, 99);
 
 		size_t compos =  line.find("#");

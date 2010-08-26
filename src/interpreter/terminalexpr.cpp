@@ -10,7 +10,7 @@ namespace TermInterpreter
 TerminalExpr::TerminalExpr(double value)
 : m_value(value) {}
 
-double TerminalExpr::evaluate(Context& cont) const
+double TerminalExpr::evaluate(const Context& cont) const
 {
 	return m_value;
 }

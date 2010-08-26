@@ -8,13 +8,13 @@ namespace TermInterpreter
 
 class Context;
 
-class TerminalExpr : public Expression 
+class TerminalExpr : public Expression
 {
 public:
 	TerminalExpr(double value);
 	virtual ~TerminalExpr(){}
 
-	virtual double evaluate(Context&) const;
+	virtual double evaluate(const Context&) const;
 	virtual string toString() const;
 private:
 	double m_value;

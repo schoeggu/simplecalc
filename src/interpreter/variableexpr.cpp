@@ -8,7 +8,7 @@ namespace TermInterpreter
 VariableExpr::VariableExpr(string name)
 : m_name(name) {}
 
-double VariableExpr::evaluate(Context& cont) const
+double VariableExpr::evaluate(const Context& cont) const
 {
 	return cont.lookupVar(m_name)->evaluate(cont);
 }

@@ -76,9 +76,9 @@ statement:
 		| expr 								{driver.result($1);}
 
 assignment:
-		WORD '=' expr 						{driver.setVar(*$1, $3); driver.result(NULL); delete $1;}
-		| WORD ':=' expr 					{driver.setVar(*$1, $3, false); driver.result(NULL); delete $1;}
-		| function '=' expr					{driver.addFunction($1->name, new CustomFunction($1->parList, $3)); driver.result(NULL); delete $1;}
+		WORD '=' expr 						{driver.setVar(*$1, $3); delete $1;}
+		| WORD ':=' expr 					{driver.setVar(*$1, $3, false); delete $1;}
+		| function '=' expr					{driver.addFunction($1->name, new CustomFunction($1->parList, $3)); delete $1;}
 
 parenthesisPart:
 	   '(' expr								{$$ = $2;}

@@ -8,13 +8,13 @@ namespace TermInterpreter
 
 	class Context;
 
-	class ParenthesisExpr : public Expression 
+	class ParenthesisExpr : public Expression
 	{
 	public:
 		ParenthesisExpr(Expression*, bool = false);
 		virtual ~ParenthesisExpr();
-	
-		virtual double evaluate(Context&) const;
+
+		virtual double evaluate(const Context&) const;
 		virtual string toString() const;
 	private:
 		Expression* m_par;

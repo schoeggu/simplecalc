@@ -22,7 +22,7 @@ namespace TermInterpreter
 		CustomFunction(Expression* param, Expression* func);
 		virtual ~CustomFunction();
 
-		virtual double call(vector<Expression*>* args, Context& globalContext) const;
+		virtual double call(vector<Expression*>* args, const Context& globalContext) const;
 
 		virtual vector<string> getParams() const;
 		virtual string getDescription() const { return m_func->toString(); }

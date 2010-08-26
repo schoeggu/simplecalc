@@ -38,7 +38,7 @@ namespace TermInterpreter
 		CFunction(int numParams, Func func, std::string descr);
 		virtual ~CFunction();
 
-		virtual double call(std::vector<Expression*>* args, Context& globalContext) const;
+		virtual double call(std::vector<Expression*>* args, const Context& globalContext) const;
 
 		virtual string getDescription() const { return m_description; }
 	private:

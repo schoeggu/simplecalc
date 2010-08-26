@@ -50,13 +50,13 @@ namespace TermInterpreter
 
 	void Driver::setVar(const string name, Expression* expr, bool ref)
 	{
-		cout << '\'' << name << '\'' << " is set to: '";
+		//cout << '\'' << name << '\'' << " is set to: '";
 		if (ref) {
 			m_globalContext->setVar(name, expr);
-			cout << expr->toString() << "' (" << expr->evaluate(*m_globalContext) << ")" << endl;
+		//	cout << expr->toString() << "' (" << expr->evaluate(*m_globalContext) << ")" << endl;
 		} else {
 			m_globalContext->setVar(name, expr->evaluate(*m_globalContext));
-			cout << m_globalContext->lookupVar(name)->evaluate(*m_globalContext) << "'" << endl;
+		//	cout << m_globalContext->lookupVar(name)->evaluate(*m_globalContext) << "'" << endl;
 		}
 	}
 
@@ -107,11 +107,8 @@ namespace TermInterpreter
 
 	void Driver::result(Expression* res)
 	{
-		delete m_result;
-		m_result = res;
-//		cout << "Result is: " << res->evaluate(*m_globalContext) << endl;
-//		cout << "Term is:   " << res->toString() << endl;
-//		cout << res->toString() << " = " << res->evaluate(*m_globalContext) << endl;
+		m_globalContext->setResult(res);
+
 	}
 
 	void Driver::error(const yy::location& l, const string& m)
