@@ -20,7 +20,9 @@ int main(int argc, char** argv)
 		str = str + tmp;
 	}
 	d.parse(str);
-	if (d.getResult() != DBL_MAX) cout << d.getResult() << endl;
+	if (c->getResult() != DBL_MAX) {
+	    cout << c->getResult() << endl;
+	}
 
 	delete c;
 	c = NULL;
