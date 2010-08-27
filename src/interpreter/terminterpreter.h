@@ -2,6 +2,7 @@
 #define TERMINTERPRETER_H
 
 #include "context/context.h"
+#include "context/lookupexception.h"
 #include "context/function.h"
 #include "context/customfunction.h"
 #include "context/cfunction.h"

@@ -32,10 +32,13 @@ ADD_LIBRARY(
 	expression/variableexpr.cpp
 	expression/expression.cpp
 
-	context/cfunction.cpp
+
 	context/context.cpp
+	context/lookupexception.cpp
+	context/function.cpp
+	context/cfunction.cpp
 	context/customfunction.cpp
-    context/function.cpp
+
 
 	driver.cpp
 	${BF_SOURCES}

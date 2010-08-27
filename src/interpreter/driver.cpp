@@ -1,5 +1,6 @@
 #include "expression/expression.h"
 #include "context/context.h"
+#include "context/lookupexception.h"
 #include "driver.h"
 #include "parser.hpp"
 //#include "scanner.hpp"
@@ -36,10 +37,16 @@ namespace TermInterpreter
 
 	void Driver::parse(string& term)
 	{
-		scanBegin(term);
+	    if (term.empty()) return;
+	    m_term = term;
+		scanBegin(m_term);
 		yy::Parser parser(*this);
 		if (m_debug) { parser.set_debug_level(1);}
-		parser.parse();
+		try {
+            parser.parse();
+		} catch (LookupException e) {
+            error(e.getExceptionText() + ": " + e.getObject());
+		}
 		scanEnd();
 	}
 

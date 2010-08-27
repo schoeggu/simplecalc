@@ -3,15 +3,14 @@
 #include "context.h"
 #include "function.h"
 #include "cfunction.h"
+#include "lookupexception.h"
 #include <iostream>
 #include <float.h>
 
 namespace TermInterpreter
 {
-	double dummy() { return 0; }
-
 	Context::Context(bool dontdelete) : m_parent(NULL), m_bDontDelete(dontdelete), m_result(new TerminalExpr(0)), m_lastResult(new TerminalExpr(0)), m_bResultChanged(false) {}
-	Context::Context(const Context* parent, bool dontdelete) : m_parent(parent), m_bDontDelete(dontdelete), m_result(NULL), m_lastResult(NULL), m_bResultChanged(false) {}
+	Context::Context(const Context* parent, bool dontdelete) : m_parent(parent), m_bDontDelete(dontdelete), m_result(new TerminalExpr(0)), m_lastResult(new TerminalExpr(0)), m_bResultChanged(false) {}
 
 	Context::~Context()
 	{
@@ -55,8 +54,8 @@ namespace TermInterpreter
 		if (m_parent) {
 			return m_parent->lookupVar(name);
 		} else {
-				std::cerr << "ERROR: #context.cpp:53" << std::endl;
-			return NULL; //TODO throw exception
+		    LookupException e(name, "Variable not defined");
+            throw e;
 		}
 	}
 
@@ -74,9 +73,8 @@ namespace TermInterpreter
 		if (m_parent) {
 			return m_parent->lookupFunction(name);
 		} else {
-			Function* f = new CFunction(0, &dummy);
-			std::cerr << "ERROR: #context.cpp:73" << std::endl;
-			return f; //TODO throw exception
+		    LookupException e(name, "Function not defined");
+			throw e;
 		}
 	}
 
@@ -86,6 +84,7 @@ namespace TermInterpreter
         m_lastResult = m_result;
         m_result = res;
         setVar("RES", m_lastResult->evaluate(*this));
+        m_result->evaluate(*this);
         m_bResultChanged = true;
 	}
 
