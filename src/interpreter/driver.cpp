@@ -113,12 +113,16 @@ namespace TermInterpreter
 
 	void Driver::error(const yy::location& l, const string& m)
 	{
-			std::cerr << l << ':' << m << std::endl;
+			std::cerr << "Error: " << l << ' ' << m << std::endl;
+            std::cerr << m_term << std::endl;
+            int collumn = l.begin.column;
+            for (int i = 1; i < collumn; i++) std::cerr << ' ';
+            std::cerr << '^' << std::endl;
 	}
 
 	void Driver::error(const string& m)
 	{
-			std::cerr << m << std::endl;
+			std::cerr << "Error: " << m << std::endl;
 	}
 
 

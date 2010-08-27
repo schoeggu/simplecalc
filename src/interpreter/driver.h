@@ -54,6 +54,7 @@ namespace TermInterpreter
 		void scanBegin(string&);
 		void scanEnd();
 
+        string m_term;
 		bool m_debug;
 		Context* m_globalContext;
 		Expression* m_result; //TODO history
