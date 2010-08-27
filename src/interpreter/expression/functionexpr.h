@@ -7,7 +7,7 @@ using std::string;
 using std::vector;
 
 #include "expression.h"
-#include "function.h"
+#include "context/function.h"
 
 namespace TermInterpreter
 {

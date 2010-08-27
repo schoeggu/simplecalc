@@ -1,18 +1,17 @@
 #ifndef TERMINTERPRETER_H
 #define TERMINTERPRETER_H
 
-#include "context.h"
-#include "function.h"
+#include "context/context.h"
+#include "context/function.h"
+#include "context/customfunction.h"
+#include "context/cfunction.h"
 
-#include "expression.h"
-#include "basicexpr.h"
-#include "parenthesisexpr.h"
-#include "functionexpr.h"
-#include "function.h"
-#include "customfunction.h"
-#include "cfunction.h"
-#include "terminalexpr.h"
-#include "variableexpr.h"
+#include "expression/expression.h"
+#include "expression/basicexpr.h"
+#include "expression/parenthesisexpr.h"
+#include "expression/functionexpr.h"
+#include "expression/terminalexpr.h"
+#include "expression/variableexpr.h"
 
 #include "driver.h"
 

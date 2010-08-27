@@ -1,8 +1,13 @@
 INCLUDE(${CMAKE_SOURCE_DIR}/CMake/FindParsers.cmake)
 
+ADD_SUBDIRECTORY(expression)
+ADD_SUBDIRECTORY(context)
+
 INCLUDE_DIRECTORIES(
 	${CMAKE_BINARY_DIR}/${INTERPRETER_DIR}
 	${CMAKE_SOURCE_DIR}/${UTIL_DIR}
+	${CMAKE_SOURCE_DIR}/${INTERPRETER_DIR}/expression
+	${CMAKE_SOURCE_DIR}/${INTERPRETER_DIR}/context
 	${CMAKE_CURRENT_SOURCE_DIR}
 )
 
@@ -20,17 +25,19 @@ ENDIF(PARSERS_FOUND)
 ADD_LIBRARY(
 	interpreter
 
-	basicexpr.cpp
-	cfunction.cpp
-	context.cpp
-	customfunction.cpp
+	expression/basicexpr.cpp
+	expression/functionexpr.cpp
+	expression/parenthesisexpr.cpp
+	expression/terminalexpr.cpp
+	expression/variableexpr.cpp
+	expression/expression.cpp
+
+	context/cfunction.cpp
+	context/context.cpp
+	context/customfunction.cpp
+    context/function.cpp
+
 	driver.cpp
-	expression.cpp
-	functionexpr.cpp
-	parenthesisexpr.cpp
-	terminalexpr.cpp
-	variableexpr.cpp
-	function.cpp
 	${BF_SOURCES}
 )
 

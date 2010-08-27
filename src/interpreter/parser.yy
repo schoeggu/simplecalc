@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 #include "terminterpreter.h"
-#include "customfunction.h"
+#include "context/customfunction.h"
 
 using namespace TermInterpreter;
 
