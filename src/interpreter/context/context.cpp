@@ -1,5 +1,5 @@
-#include "expression.h"
-#include "terminalexpr.h"
+#include "expression/expression.h"
+#include "expression/terminalexpr.h"
 #include "context.h"
 #include "function.h"
 #include "cfunction.h"

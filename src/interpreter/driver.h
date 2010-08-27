@@ -18,8 +18,8 @@ namespace TermInterpreter
 	class Context;
 }
 
-#include "expression.h"
-#include "function.h"
+#include "expression/expression.h"
+#include "context/function.h"
 
 using namespace TermInterpreter;
 

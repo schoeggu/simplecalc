@@ -2,7 +2,7 @@
 #define FUNCTION_H
 
 #include <vector>
-#include "expression.h"
+#include "expression/expression.h"
 #include "context.h"
 
 namespace TermInterpreter
