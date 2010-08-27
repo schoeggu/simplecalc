@@ -1,30 +1,37 @@
-output besser (funktion mit , und so ) (evtl mit printer klasse)
-makefile mit libs und subdirectories schoner machen
-konstanten (PI, e, ...)
-function initializer
-var auflistung
-func auflistung
-gui,
-commands
-include für files
+TODOS:
+gui
+include fÃ¼r files
 file support besser
-excpetions
 conditional, loop, bool, etc
-driver api besser machen
 unit tests
 system tests
 bessere clients
 const und var unterscheidung
+cmake files Ã¼berarbeiten
 visitor?
 
+zum teil erledigt:
+output besser (funktion mit , und so ) (evtl mit printer klasse)
+konstanten (PI, e, ...)
+commands
+excpetions
+driver api besser machen
 
+erledigt:
+(done) makefile mit libs und subdirectories schoner machen
+(done) var auflistung
+(done) func auflistung
+
+
+
+============================================================================
 
 
 Interpreter:
            erstellt ein tree.
  Scanner --------------------------> expression
  Parser                         expression   expression 
-                                     
+  |                                   |                                 
   | term/resultat                     | funktionen
   v            set var/func           | variablen
  Driver --------------------------> Context
@@ -51,11 +58,11 @@ A+B+C:expr
    /           \
 customfunc    cfunc
 
-für eval von expr brauchts local context
+fÃ¼r eval von expr brauchts local context
 
 local context wird bei eval von func1 gesetzt und hat die A, B, C als von aufrufparameter als vars gespeichert
 
-dafür braucht context einen parent den er bei nichtfinden aufrufen kann...
+dafÃ¼r braucht context einen parent den er bei nichtfinden aufrufen kann...
 global context hat keinen parent
 
 

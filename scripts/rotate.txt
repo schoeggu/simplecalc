@@ -1,0 +1,8 @@
+nPx = 60
+t = 500
+r = 150
+U = 2 * r * PI
+V = U / t
+tPx = t / V
+sPx = U / nPx
+tPx(pos) = pos * tPx 
