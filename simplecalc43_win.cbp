@@ -101,6 +101,7 @@
 				<Option object_output=".\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Option parameters="--interactive " />
 				<Compiler>
 					<Add directory="D:\Projects\cmake\simplecalc_git\win_build\src\interpreter" />
