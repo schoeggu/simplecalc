@@ -18,7 +18,6 @@ namespace TermInterpreter
 			map<string, Expression*>::iterator iter;
 			for (iter = m_Vars.begin(); iter != m_Vars.end();)
 			{
-//				std::cout << iter->second << std::endl;
 				delete iter->second;
 				m_Vars.erase(iter++);
 			}

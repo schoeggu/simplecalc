@@ -30,9 +30,8 @@ namespace TermInterpreter
 	{
 		delete m_result;
 		m_globalContext = NULL;
-	//	yylex_destroy();
+		//yylex_destroy();
 		//TODO delete funcitons/vars? eher weniger?
-		//
 	}
 
 	void Driver::parse(string& term)
@@ -57,13 +56,10 @@ namespace TermInterpreter
 
 	void Driver::setVar(const string name, Expression* expr, bool ref)
 	{
-		//cout << '\'' << name << '\'' << " is set to: '";
 		if (ref) {
 			m_globalContext->setVar(name, expr);
-		//	cout << expr->toString() << "' (" << expr->evaluate(*m_globalContext) << ")" << endl;
 		} else {
 			m_globalContext->setVar(name, expr->evaluate(*m_globalContext));
-		//	cout << m_globalContext->lookupVar(name)->evaluate(*m_globalContext) << "'" << endl;
 		}
 	}
 
@@ -71,8 +67,7 @@ namespace TermInterpreter
 	{
 		if (func) {
 			m_globalContext->addFunction(name, func);
-			cout << "added function '" << name << "'\n";
-		}
+        }
 	}
 
 	void Driver::command(string command)
