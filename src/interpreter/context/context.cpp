@@ -29,6 +29,9 @@ namespace TermInterpreter
 			}
 		}
 
+		delete m_result;
+		delete m_lastResult;
+
 		m_parent = NULL;
 	}
 
