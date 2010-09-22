@@ -5,6 +5,6 @@
 
 namespace Util {
 	FILE* strFile(std::string str);
-}
+} // namespace
 
 #endif

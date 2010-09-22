@@ -6,9 +6,10 @@ namespace Util {
 	{
 		FILE* f;
 		f = tmpfile();
+		if (!f) { return NULL; }
 		fwrite(str.c_str(), sizeof(char), str.size(), f);
 		rewind(f);
 
 		return f;
 	}
-};
+} // namespace
