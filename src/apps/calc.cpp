@@ -25,9 +25,8 @@ double testfun(double t1, double t2, double t3) {
 	return t1*t2/t3;
 }
 
-void doCalculations(Driver* d, Context* c, istream& stream);
+void doCalculations(Driver* d, Context* c, istream& stream, bool bPrompt = false);
 void initContext(Context* c);
-void printHelp(char* prname);
 
 int main(int argc, char** argv)
 {
@@ -54,11 +53,11 @@ int main(int argc, char** argv)
 
 	    cmd.parse(argc, argv);
 
-		interactive = interactiveSwitch.isSet();
 		debug = debugSwitch.isSet();
 		init = initArg.isSet();
 		if (init) initfile = initArg.getValue();
 		if (scriptArg.isSet()) { interactive = false; filename = scriptArg.getValue(); }
+		interactive = interactive || interactiveSwitch.isSet();
 
     } catch (TCLAP::ArgException &e)  // catch any exceptions
         { cerr << "error: " << e.error() << " for arg " << e.argId() << "\n"; }
@@ -81,7 +80,7 @@ int main(int argc, char** argv)
 		doCalculations(&d, c, file);
 		file.close();
 	} else {
-		doCalculations(&d, c, cin);
+		doCalculations(&d, c, cin, true);
 	}
 
 	delete c;
@@ -90,8 +89,9 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-void doCalculations(Driver* d, Context* c, istream& stream)
+void doCalculations(Driver* d, Context* c, istream& stream, bool bPrompt)
 {
+    if (bPrompt) cout << "> " << flush;
 	string line;
 	char* pc = new char[99];
 	stream.getline(pc, 99);
@@ -101,6 +101,7 @@ void doCalculations(Driver* d, Context* c, istream& stream)
 		if (c->hasResultChanged() && c->getResult() != DBL_MAX) {
 			cout << c->getResultExpression()->toString() << " = " << c->getResult() << endl;
 		}
+		if (bPrompt) cout << "> " << flush;
 		stream.getline(pc, 99);
 
 		size_t compos =  line.find("#");
@@ -120,30 +121,14 @@ void initContext(Context* c)
 	c->addFunction("rand", new CFunction(0, &myrand, "random number between 0 and RAND_MAX"));
 
 	c->addFunction("sqrt", new CFunction(1, &sqrt, "square root"));
-	c->addFunction("sin", new CFunction(1, &sin));
-	c->addFunction("cos", new CFunction(1, &cos));
-	c->addFunction("tan", new CFunction(1, &tan));
+	c->addFunction("sin", new CFunction(1, &sin, "sinus"));
+	c->addFunction("cos", new CFunction(1, &cos, "cosinus"));
+	c->addFunction("tan", new CFunction(1, &tan, "tangens"));
 
 	c->addFunction("max", new CFunction(2, &fmax));
 	c->addFunction("min", new CFunction(2, &fmin));
 
-	c->addFunction("X", new CFunction(3, &testfun));
-
 	c->setVar("PI", new TerminalExpr(M_PI));
 	c->setVar("RAND_MAX", new TerminalExpr(RAND_MAX));
 	c->setVar("RES", new TerminalExpr(0));
-}
-
-void printHelp(char* prgName)
-{
-	cout << "usage: " << prgName << " [-i] [-I file] [-f file] [-d] [-h]\n"
-		    "\n"
-		    "if no file is specified, the programm will enter its interactive mode.\n"
-		    "\n"
-		    "[-i]              interactive mode\n"
-		    "[-I file]         initialize with [file]\n"
-  		    "[-f file]         read commands from [file]\n"
-			"[-d]              enable debug output\n"
-			"[-h]              print this help\n";
-
 }
