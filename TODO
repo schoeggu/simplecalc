@@ -1,14 +1,18 @@
-TODOS:
+﻿TODOS:
+:loadFile command - dieser liest ein file ein und führt dessen inhalt aus ... aber erst command engine verbessern
 gui
 include für files
+files müssen am ende ein newline haben, sonst wird die letzte zeile nicht berücksichtigt. das beheben
 file support besser
 conditional, loop, bool, etc
 unit tests
 system tests
+doku generator (doxygen)
 bessere clients
 const und var unterscheidung
 cmake files überarbeiten
 visitor?
+programm parameter säubern (--interactive..)
 
 zum teil erledigt:
 output besser (funktion mit , und so ) (evtl mit printer klasse)

@@ -5,4 +5,4 @@ U = 2 * r * PI
 V = U / t
 tPx = t / V
 sPx = U / nPx
-tPx(pos) = pos * tPx 
+tPx(pos)=pos*tPx

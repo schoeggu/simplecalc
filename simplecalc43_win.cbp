@@ -291,6 +291,28 @@
 			<Option target="eq" />
 			<Option target="eq/fast" />
 		</Unit>
+		<Unit filename="src\interpreter\context\lookupexception.cpp">
+			<Option target="all" />
+			<Option target="utils" />
+			<Option target="utils/fast" />
+			<Option target="interpreter" />
+			<Option target="interpreter/fast" />
+			<Option target="calc" />
+			<Option target="calc/fast" />
+			<Option target="eq" />
+			<Option target="eq/fast" />
+		</Unit>
+		<Unit filename="src\interpreter\context\lookupexception.h">
+			<Option target="all" />
+			<Option target="utils" />
+			<Option target="utils/fast" />
+			<Option target="interpreter" />
+			<Option target="interpreter/fast" />
+			<Option target="calc" />
+			<Option target="calc/fast" />
+			<Option target="eq" />
+			<Option target="eq/fast" />
+		</Unit>
 		<Unit filename="src\interpreter\driver.cpp" />
 		<Unit filename="src\interpreter\driver.h" />
 		<Unit filename="src\interpreter\expression\CMakeLists.txt">
