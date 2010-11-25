@@ -1,0 +1,17 @@
+simplecalc
+
+current version 4.3
+
+it's just a simple calculator
+
+type a calculation:
+3 * ( 1 + 2/*3)
+and it will calculate it.
+
+you may define variables:
+a=sqrt(30)
+b=2*a
+...
+
+you also may define functions:
+f(a,b) = a^2+b

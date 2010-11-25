@@ -13,6 +13,10 @@ const und var unterscheidung
 cmake files überarbeiten
 visitor?
 programm parameter säubern (--interactive..)
+lineare gleichungen lösen - dazu max 1 variable und keine funktionen, keine potenz
+syntax highlight
+ausgabe in bin/hex/oct, ausgabe formatierung mit precision und ' (100'000'000)
+function plotter (vorerst linear)
 
 zum teil erledigt:
 output besser (funktion mit , und so ) (evtl mit printer klasse)
