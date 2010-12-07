@@ -1,4 +1,5 @@
 #include "terminterpreter.h"
+#include "util.h"
 
 #include <string>
 #include <math.h>
@@ -36,6 +37,7 @@ int main(int argc, char** argv)
 	string filename;
 	string initfile;
 
+	cout << "home: " << getHomeDirectory() << endl;
 
     try {
 
