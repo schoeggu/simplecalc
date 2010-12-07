@@ -45,3 +45,5 @@ ADD_LIBRARY(
 )
 
 TARGET_LINK_LIBRARIES(interpreter utils)
+
+INSTALL (TARGETS interpreter DESTINATION lib)
