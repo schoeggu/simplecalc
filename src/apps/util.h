@@ -8,22 +8,15 @@
 
 #include <unistd.h>
 #include <string>
-#include <iostream>
-	using std::cout;
-	using std::endl;
 
 
 std::string getHomeDirectory()
 {
-	cout << "USERPROFILE: " << (getenv("USERPROFILE") ? getenv("USERPROFILE")  : "") << endl;
-	cout << "HOMEDRIVE: " << (getenv("HOMEDRIVE") ? getenv("HOMEDRIVE") : "") << endl;
-	cout << "HOMEPATH: " << (getenv("HOMEPATH") ? getenv("HOMEPATH") : "") << endl;
-	cout << "HOME: " << (getenv("HOME") ? getenv("HOME") : "") << endl;
 	std::string dir;
 	char* env;
 	#ifdef WIN32
 		if (env = getenv("USERPROFILE")) dir = env;
-		else if (env = getenv("HOMEDRIVE") {
+		else if (env = getenv("HOMEDRIVE")) {
 			dir = env;
 			dir += getenv("HOMEPATH");
 		}
@@ -34,5 +27,4 @@ std::string getHomeDirectory()
 	#endif
 	return dir;
 }
-
 

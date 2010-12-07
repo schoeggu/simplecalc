@@ -18,9 +18,11 @@ set(SRC_DIR src)
 set(INTERPRETER_DIR src/interpreter)
 set(UTIL_DIR src/util)
 set(APPS_DIR src/apps)
+set(SCRIPTS_DIR scripts)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
 ADD_SUBDIRECTORY(${CMAKE_SOURCE_DIR}/${SRC_DIR})
+ADD_SUBDIRECTORY(${CMAKE_SOURCE_DIR}/${SCRIPTS_DIR})
 
 ADD_CUSTOM_COMMAND(
     OUTPUT "libinterpreter.so"

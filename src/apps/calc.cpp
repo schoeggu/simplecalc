@@ -37,7 +37,6 @@ int main(int argc, char** argv)
 	string filename;
 	string initfile;
 
-	cout << "home: " << getHomeDirectory() << endl;
 
     try {
 
@@ -70,6 +69,13 @@ int main(int argc, char** argv)
 
 	Driver d(debug);
 	d.setContext(c);
+
+	string initPath = getHomeDirectory() + PATH_DELIM + ".simplecalc";
+	ifstream initFile(initPath.c_str(), ifstream::in);
+	if (initFile.good()) {
+		doCalculations(&d, c, initFile);
+		initFile.close();
+	}
 
 	if (init) {
 		ifstream file(initfile.c_str(), ifstream::in);
